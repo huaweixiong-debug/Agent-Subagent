@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "claude": {
+    "command": "claude",
+    "argsPrefix": [],
+    "planModel": "opus",
+    "reviewModel": "opus",
+    "outputFormat": "json",
+    "permissionMode": "plan",
+    "maxTurns": 40,
+    "maxBudgetUsd": 5,
+    "allowedTools": ["Read", "Glob", "Grep"],
+    "disallowedTools": ["AskUserQuestion"],
+    "extraArgs": [],
+    "env": {}
+  },
+  "opencode": {
+    "command": "opencode",
+    "argsPrefix": [],
+    "model": "deepseek/deepseek-flash",
+    "variant": "max",
+    "agent": "agent-loop-executor",
+    "maxOutputTokens": 8192,
+    "maxStepsPerTask": 8,
+    "extraArgs": [],
+    "env": {}
+  },
+  "limits": {
+    "maxPlanAttempts": 2,
+    "maxTasks": 20,
+    "maxFixPerTask": 1,
+    "maxTokenBudget": 2000000,
+    "commandTimeoutMs": 900000,
+    "maxTransientRetries": 1,
+    "maxTaskInstructionChars": 20000,
+    "maxReviewEvidenceChars": 400000
+  },
+  "verification": {
+    "allowedCommands": ["node --test"]
+  },
+  "constraints": {
+    "allowedGlobs": ["src/**", "lib/**", "test/**", "docs/**", "*.md", "*.json"]
+  }
+}
